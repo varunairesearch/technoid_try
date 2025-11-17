@@ -1,3 +1,4 @@
+// This is a new commit to force Vercel to update
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
