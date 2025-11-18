@@ -29,7 +29,7 @@ export default function Hero() {
         </h1>
         
         <p className="text-xl md:text-3xl font-rajdhani text-gray-400 tracking-[0.3em] uppercase">
-          Human <span className="text-neon-yellow">x</span> Machina
+          THE <span className="text-neon-yellow">NEON</span> ASCENT
         </p>
 
         <div className="pt-10">
