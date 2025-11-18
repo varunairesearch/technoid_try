@@ -114,12 +114,13 @@ export default function EventsPage() {
             </h2>
             
             {/* Events Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {category.events.map((event) => (
                 // --- THE EVENT CARD CONTAINER ---
+                // aspect-[2/3] ensures a tall, poster-like shape
                 <div 
                   key={event.title} 
-                  className="clip-tile group relative flex flex-col h-[450px] bg-cyber-black/70 backdrop-blur-sm border border-neon-cyan/30 overflow-hidden transition-all duration-300 hover:border-neon-cyan/100 hover:shadow-[0_0_30px_rgba(0,243,255,0.3)]"
+                  className="clip-tile group relative flex flex-col w-full aspect-[2/3] bg-cyber-black/70 backdrop-blur-sm border border-neon-cyan/30 overflow-hidden transition-all duration-300 hover:border-neon-cyan/100 hover:shadow-[0_0_30px_rgba(0,243,255,0.3)]"
                 >
                   
                   {/* --- 1. FULL POSTER DISPLAY --- */}
@@ -127,14 +128,14 @@ export default function EventsPage() {
                     <CyberImage
                       src={event.poster}
                       alt={`${event.title} Poster`}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 mix-blend-normal opacity-100" 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
                     />
-                    {/* Subtle gradient at bottom for readability of tag if needed, but keeping it clean mostly */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+                    {/* Subtle gradient at bottom for depth */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-40" />
                   </div>
 
                   {/* --- 2. HOVER OVERLAY (Details) --- */}
-                  <div className="absolute inset-0 bg-cyber-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 translate-y-4 group-hover:translate-y-0">
+                  <div className="absolute inset-0 bg-cyber-black/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 translate-y-4 group-hover:translate-y-0">
                     
                     <div className="flex items-center justify-between mb-2">
                       <span className={`font-mono text-xs ${category.categoryColor} uppercase tracking-widest`}>
@@ -147,7 +148,7 @@ export default function EventsPage() {
                       {event.title}
                     </h3>
                     
-                    <p className="font-rajdhani text-gray-300 text-sm mb-6 line-clamp-4">
+                    <p className="font-rajdhani text-gray-300 text-sm mb-6 line-clamp-6">
                       {event.desc}
                     </p>
 
